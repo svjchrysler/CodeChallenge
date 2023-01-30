@@ -12,10 +12,17 @@ import {ITransaction} from "../../models/transaction";
 import {ListRenderItemInfo} from "react-native";
 import moment from "moment";
 import Icons from '../../helpers/Icons';
+import * as RootNavigation from '../../navigation/RootNavigation';
+import {ROUTES} from "../../helpers/Constants";
 
 const TransactionItem = ({ item }: ListRenderItemInfo<ITransaction>) => {
+  
+  const goToProductDetail = () => {
+    RootNavigation.navigate(ROUTES.PRODUCT_DETAIL, { product: item });
+  }
+  
   return (
-    <Container>
+    <Container onPress={goToProductDetail}>
       <ContendDetail>
         <ProductImage source={{ uri: item.image  }} />
         <ContentInformation>

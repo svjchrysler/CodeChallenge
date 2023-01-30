@@ -8,12 +8,13 @@ import ProductDetail from '../screens/ProductDetail';
 
 //utils
 import {ROUTES} from "../helpers/Constants";
+import { navigationRef } from './RootNavigation';
 
 const Stack = createNativeStackNavigator();
 
 const MainStack = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
       >

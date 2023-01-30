@@ -6,6 +6,7 @@ const DARK_BLACK: string = '#000000';
 const GREEN: string = '#00B833';
 const RED: string = '#FF0000';
 const BLUE: string = '#334FFA';
+const PURPLE: string = '#CFD6FF';
 
 export default {
   WHITE,
@@ -15,4 +16,5 @@ export default {
   GREEN,
   RED,
   BLUE,
+  PURPLE,
 }
