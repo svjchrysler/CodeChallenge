@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Title, Card, Month, Points, Center} from "./PointsCard.styles";
+import {AxiosResponse} from "axios/index";
+import {ITransaction} from "../../models/transaction";
 
-const PointsCard = () => {
+interface IPointsCard {
+  data: AxiosResponse<Array<ITransaction>> | []
+}
+
+const PointsCard = ({data = []}: IPointsCard) => {
+  
+  const [points, setPoints] = useState<number>(0);
+  
+  useEffect(() => {
+    const totalPoints: number = data
+      .filter((pts: ITransaction) => !pts.is_redemption)
+      .reduce((accumulator: number, currentValue: ITransaction) => {
+        return accumulator + currentValue.points;
+      }, 0);
+    setPoints(totalPoints);
+  }, [data])
+  
   return (
     <Container>
       <Title>
@@ -13,7 +31,7 @@ const PointsCard = () => {
             Diciembre
           </Month>
           <Points>
-            10,00.00 pts
+            {`${points.toLocaleString('en-US')} pts`}
           </Points>
         </Card>
       </Center>

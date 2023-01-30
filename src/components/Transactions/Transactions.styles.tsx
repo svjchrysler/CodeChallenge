@@ -3,8 +3,14 @@ import styled from 'styled-components/native';
 import COLORS from "../../styles/COLORS";
 import {ListRenderItem} from "react-native";
 import {ITransaction} from "../../models/transaction";
+import { 
+  Dimensions,
+} from 'react-native';
+
+const { height } = Dimensions.get('screen');
 
 const Container = styled.View`
+  height: ${height * 0.45}px;
 `
 
 const Title = styled.Text`
