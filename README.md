@@ -6,7 +6,7 @@
 
 ![alt text for screen readers](/documentation/earn.png "Text to show on mouseover")
 
-### Home Reclamados
+### Puntos Reclamados
 
 ![alt text for screen readers](/documentation/redemption.png "Text to show on mouseover")
 
