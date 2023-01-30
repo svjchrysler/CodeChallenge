@@ -17,12 +17,12 @@ import {ROUTES} from "../../helpers/Constants";
 
 const TransactionItem = ({ item }: ListRenderItemInfo<ITransaction>) => {
   
-  const goToProductDetail = () => {
-    RootNavigation.navigate(ROUTES.PRODUCT_DETAIL, { product: item });
+  const goToProductDetail = (product: ITransaction) => {
+    RootNavigation.navigate(ROUTES.PRODUCT_DETAIL, { product });
   }
   
   return (
-    <Container onPress={goToProductDetail}>
+    <Container onPress={() => goToProductDetail(item)}>
       <ContendDetail>
         <ProductImage source={{ uri: item.image  }} />
         <ContentInformation>
