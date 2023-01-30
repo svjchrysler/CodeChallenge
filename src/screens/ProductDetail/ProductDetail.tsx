@@ -7,16 +7,20 @@ import {
   View
 
 } from 'react-native';
-import {backgroundStyle, isDarkMode} from "../../styles";
+import styles from "../../styles";
+import COLORS from "../../styles/COLORS";
 
 const ProductDetail = () => {
   
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+        barStyle={'dark-content'}
+        backgroundColor={COLORS.WHITE}
       />
+      <View style={styles.space}>
+        
+      </View>
       <Text>Product DETAIL</Text>
     </SafeAreaView>
   );
